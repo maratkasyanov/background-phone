@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000; /* Чёрный фон */
+  overflow: hidden;
+  height: 100vh;
+  cursor: pointer;
+}
+
+/* Стили для контейнера с фоном */
+.pulse-background {
+  position: absolute;
+  left: 45%;
+  width: 100vw; /* Ширина контейнера */
+  height: 100vh; /* Высота контейнера */
+  background-image: url('./img/phone.png'); /* Устанавливаем картинку как фон */
+  background-repeat: no-repeat; /* Отключаем повторение фона */
+  background-size: 50% 100%; /* Начальный размер фона */
+  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+}
+
+/* Анимация искажения правого края */
+@keyframes skewAnimation {
+  0% {
+    background-size: 50% 100%; /* Начальный размер фона */
+  }
+  50% {
+    background-size: 60% 90%; /* Конечный размер фона */
+  }
+  100% {
+    background-size: 50% 110%; /* Конечный размер фона */
+  }
+}
